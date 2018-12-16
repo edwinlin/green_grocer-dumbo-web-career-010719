@@ -6,7 +6,6 @@ def consolidate_cart(cart) #is a hash
       if new_hash[key].nil?
         new_hash[key] = hash1
         new_hash[key][:count] = 1
-
       else
         new_hash[key][:count] += 1
       end
