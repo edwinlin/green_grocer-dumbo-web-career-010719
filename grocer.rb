@@ -3,11 +3,12 @@ def consolidate_cart(cart) #is a hash
 
   cart.each do |ele|
     ele.each do |key, hash1|
-      if new_hash[key]
-        new_hash[key][:count] += 1
-      else
+      if new_hash[key].nil?
         new_hash[key] = hash1
         new_hash[key][:count] = 1
+
+      else
+        new_hash[key][:count] += 1
       end
     end
   end
