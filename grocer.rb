@@ -1,4 +1,4 @@
-def consolidate_cart(cart) #is a hash
+def consolidate_cart(cart) #is an array
   new_hash = {}
 
   cart.each do |ele|
@@ -38,7 +38,7 @@ def apply_coupons(cart, coupons) #cart is a hash
   end
 end
 
-def apply_clearance(cart) #cart is an array
+def apply_clearance(cart) #cart is a hash
   cart.each do |item, hash1|
     if hash1[:clearance] == true
       hash1[:price] -= (hash1[:price]*0.2).round(1)
@@ -48,11 +48,8 @@ def apply_clearance(cart) #cart is an array
 end
 
 def checkout(cart, coupons) 
-  p cart2
   cart2 = consolidate_cart(cart)
-  p cart2
   couponed_cart = apply_coupons(cart2, coupons)
-  p couponed_cart
   final_cart = apply_clearance(couponed_cart)
   
   total = 0
