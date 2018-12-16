@@ -15,7 +15,7 @@ def consolidate_cart(cart) #is a hash
 end
 
 def apply_coupons(cart, coupons) #cart is a hash
-  if coupons.length > 0
+  if coupons.length > 0   #check if there is a coupon
     new_cart = {}
     coupon_count = Hash.new(0)
     
